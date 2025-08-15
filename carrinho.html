@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Sabores do Sertão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <img src="logo.jpeg" alt="Logo" class="logo">
+            </a>
+            <nav id="nav-menu">
+                <a href="index.html#frutas" class="nav-link">Frutas</a>
+                <a href="index.html#legumes" class="nav-link">Legumes</a>
+                <a href="index.html#mel" class="nav-link">Mel</a>
+                <a href="index.html#laticinios" class="nav-link">Laticínios</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#" aria-label="Login"><i class="fa-solid fa-user"></i></a>
+                <a href="carrinho.html" aria-label="Carrinho de Compras" class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page-main">
+        <h1>Meu Carrinho</h1>
+        <div class="cart-container">
+            <div class="cart-items-list" id="cart-items">
+                </div>
+            
+            <div class="cart-summary">
+                <h2>Resumo do Pedido</h2>
+                <div class="summary-line">
+                    <span>Subtotal</span>
+                    <span id="subtotal-price">R$ 0,00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Frete</span>
+                    <span>Grátis</span>
+                </div>
+                <div class="summary-line total-line">
+                    <span>Total</span>
+                    <span id="total-price">R$ 0,00</span>
+                </div>
+                <button class="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sabores do Sertão. Todos os direitos reservados.</p>
+        <p>Conecte-se conosco:
+            <a href="https://www.instagram.com/saboresdosertao_ofc/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/557799369486" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        </p>
+                <p>Ou converse com Évely Narjane, Anna Beatriz, Isis Thaíssa, Higo ou Isabella</p>
+
+    </footer>
+
+    <script src="carrinho.js"></script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+/* Importando Fontes do Google */
+
+/* Variáveis de Cores (baseado na logo) */
+:root {
+    --primary-color: #5D4037; /* Marrom escuro */
+    --background-color: #EAE0D5; /* Bege claro */
+    --accent-color: #8D6E63; /* Marrom médio */
+    --text-color: #3E2723; /* Marrom bem escuro para textos */
+    --white-color: #FFFFFF;
+}
+
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+}
+
+/* Cabeçalho */
+header {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    border-color: var(--primary-color);
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-icons a {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    position: relative;
+}
+
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #E53935;
+    color: var(--white-color);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Seção Hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/1656569/pexels-photo-1656569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    color: var(--white-color);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+}
+
+/* Grade de Produtos */
+.products-container {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-grid.hidden {
+    display: none;
+}
+
+.product-card {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+
+.product-card .origin {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin: 0.25rem 0;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 0.5rem 0;
+}
+
+.add-to-cart-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--background-color);
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 86px; /* Altura do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    nav.active {
+        display: flex;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    /* ======================= ESTILOS DO MODAL DO CARRINHO ======================= */
+
+/* Adiciona um cursor de ponteiro para indicar que o ícone é clicável */
+.cart-icon {
+    cursor: pointer;
+}
+
+/* O fundo do modal (tela cheia, escurecida) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 2000; /* Garante que fique na frente de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo preto com transparência */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* O conteúdo do modal (a caixa branca) */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% do topo e centralizado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+/* Botão de fechar (o "X") */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 15px 0;
+    max-height: 40vh; /* Altura máxima para o corpo do carrinho */
+    overflow-y: auto; /* Adiciona barra de rolagem se houver muitos itens */
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item span {
+    font-size: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+    text-align: right;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Animações simples para o modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+}
